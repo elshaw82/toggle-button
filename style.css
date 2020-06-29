@@ -1,0 +1,71 @@
+
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height:100vh;
+    background-color: rgb(94,220,182);
+}
+
+input[type="checkbox"] {
+    position: relative;
+    width:100px;
+    height:50px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: rgb(94,220,182);
+    border-radius: 40px;
+    box-shadow: inset 4px 4px 10px rgb(66, 160, 132),
+                -3px -3px 5px rgb(131, 235, 203), 3px 3px 10px rgb(83, 194, 161);
+                
+    transition: .5s;
+    outline:none;
+}
+
+input:checked[type="checkbox"] {
+    background-color: rgb(75, 182, 150);
+    box-shadow:  -3px -3px 5px rgb(131, 235, 203),inset 4px 4px 10px rgb(66, 160, 132);
+   
+}
+
+input[type="checkbox"]:before {
+    content:"";
+    position: absolute;
+    width:47px;
+    height:47px;
+    border-radius: 50%;
+    top:2px;
+    left:0px;
+    background-color: #f1f1f1;
+    transition: 0.5s;
+    transform:scale(1.1);
+    box-shadow: 2px 2px 3px rgb(83, 194, 161),
+                inset 5px 5px 15px #cfcfcf;
+}
+
+input:checked[type="checkbox"]:before {
+    left: 53px;
+}
+
+input:checked[type="checkbox"]:after {
+    content:"👋";
+    position: absolute;
+    top:17px;
+    left: 20px;
+    font-family:monospace;
+    color:white;
+    animation: animate 1s ease;
+}
+
+@keyframes animate {
+    from { opacity:0;}
+    to {opacity:1;}
+}
+
